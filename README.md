@@ -9,7 +9,7 @@ Latest Update: [Website - Beta version](https://fastbizztech.netlify.app/) - A R
 
 
 
-Link of the deployed app: [KRYPTO.NITE](https://fastbizztech.netlify.app/)
+Link of the deployed app: [sample website](https://fastbizztech.netlify.app/)
 
 
 Project created during my internship at Fast Business Technology Pvt Ltd.
