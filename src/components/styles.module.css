@@ -1,0 +1,91 @@
+:root {
+    --color-toggle-light: #f6d447;
+    --color-toggle-dark: #2d0697;
+    --toggle-bg-light: #e2e8f0;
+    --toggle-bg-dark: #1a202c;
+  }
+  
+  .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 30px;
+    padding: 3px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .IsLight {
+    background-color: var(--toggle-bg-light);
+  }
+  
+  .IsDark {
+    background-color: var(--toggle-bg-dark);
+  }
+  
+  .container input {
+    display: none;
+  }
+  
+  .container input + div {
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    box-shadow: inset 6px -6px 0 0 var(--color-toggle-dark, #000);
+    transform: scale(1) rotate(-2deg);
+    transition: box-shadow 0.5s ease 0s, transform 0.4s ease 0.1s;
+  }
+  
+  .container input + div::before {
+    content: "";
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: background 0.3s ease;
+  }
+  
+  .container input + div::after {
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    margin: -2px 0 0 -2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0 -12px 0 var(--color-toggle-light, #eee),
+                0 12px 0 var(--color-toggle-light, #eee),
+                12px 0 0 var(--color-toggle-light, #eee),
+                -12px 0 0 var(--color-toggle-light, #eee),
+                9px 9px 0 var(--color-toggle-light, #eee),
+                -9px 9px 0 var(--color-toggle-light, #eee),
+                9px -9px 0 var(--color-toggle-light, #eee),
+                -9px -9px 0 var(--color-toggle-light, #eee);
+    transform: scale(0);
+    transition: all 0.3s ease;
+  }
+  
+  .container input:checked + div {
+    box-shadow: inset 24px -24px 0 0 #fff;
+    transform: scale(0.5) rotate(0deg);
+    transition: transform 0.3s ease 0.1s, box-shadow 0.2s ease 0s;
+  }
+  
+  .container input:checked + div::before {
+    background: var(--color-toggle-light, #eee);
+    transition: background 0.3s ease 0.1s;
+  }
+  
+  .container input:checked + div::after {
+    transform: scale(1.5);
+    transition: transform 0.5s ease 0.15s;
+  }
+  
+  
